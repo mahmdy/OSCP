@@ -1,3 +1,4 @@
 <p align="center">
-  <b># CHFI</b><br>
-![Alt text](oscp1.png)
+  <b>CHFI</b><br>
+ <img src="oscp1.png">
+</p>
