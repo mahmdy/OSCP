@@ -1,5 +1,5 @@
 <p align="center">
-<font size="5">
+<font size="20">
   <b>OSCP</b><br>
 </font>
  <img src="oscp1.png">
@@ -15,14 +15,14 @@ updatedb
 to update the file index database
 
 ```
-locate *filename*
+locate [filename]
 ```
 **which**
 
-find the file wich has current execution envirnoment
+find the file which has current execution environment
 
 ```
-which *part of file name*
+which [part of file name]
 ```
 
 **find**
@@ -30,13 +30,13 @@ which *part of file name*
 powerfull search tool with many arguments
 
 ```
-find *search location*  -name *filename* -exec file "{}"\;
+find [search location]  -name [filename] -exec file "{}"\;
 ```
 
 # Service managent:
 
 ```
-service *service name* [option]
+service [service name] [option]
 
 ```
 option could be : start, stop, or restart
@@ -44,13 +44,13 @@ option could be : start, stop, or restart
 alternatevly you can use:
 
 ```
-/etc/init.d/*service name* [option]
+/etc/init.d/[service name] [option]
 ```
 
 or:
 
 ```
-update-rc.d *servicename* [options]
+update-rc.d [service name] [options]
 
 ```
 
