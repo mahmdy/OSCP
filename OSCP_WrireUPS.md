@@ -68,3 +68,43 @@ rcconf
 sysv--rc-conf
 
 ![Alt text](sysv-rc-conf.png)
+
+
+# Bash Shell
+
+to automate actions you need to write some shell scripts for example filtring domain names from a html page:
+
+``` 
+wget cisco.com 
+cat index.html | grep "a href=" | cut -d "/" -f3
+```
+
+if you get error *ERROR: The certificate of ‘www.cisco.com’ is not trusted.* just use *wget --no-check-certificate cisco.com*
+
+#direct error to null screen (do not show errors)
+
+```
+command 2>/dev/null
+
+```
+where:
+
+stdin – 0 – Standard Input (usually keyboard or file)
+
+stdout – 1 – Standard Output (usually screen)
+
+stderr – 2 – Standard Error (usually screen)
+
+
+#Reverse Hex Dump:
+
+```
+xxd -r file > output
+```
+#login with ssh-private key
+
+```
+ssh -i [key file path] user@host
+
+```
+
