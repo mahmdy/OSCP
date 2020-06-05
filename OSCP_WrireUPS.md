@@ -118,8 +118,15 @@ ssh -i [key file path] user@host
 
 ```
 #! /bin/bash
+```
 for ip in $(1 255) do
 ping 192.168.1.$ip | grep "bytes from" | cut -d " " -f4 | cut -d ":" -f1 &
 ```
 
 the & is to send each command to background and run the next on in the loop
+
+# Rdisktop
+
+```
+rdisktop -u *username* -p *password* *hostname/ip*
+```
