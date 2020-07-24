@@ -1,10 +1,10 @@
-<p style="color:red">
+<p align=”centre”>
 
   <b>OSCP 2020</b><br>
-</p>
+
  <img src="oscp1.png">
 
-
+</p>
 <p><b> Getting Comfortable With Kali Linux</b><br></p>
 
 
