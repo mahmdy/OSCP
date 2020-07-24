@@ -1,13 +1,10 @@
-<p style="font-size:50px;color:red;align=center">
+<p style="font-size:50px;color:red">
 
-  SCP<br>
-
- <img src="oscp1.png">
+  <b>OSCP 2020</b><br>
 </p>
-<font>
-  size="40"
-  color="red"
-</font>
+ <img src="oscp1.png">
+
+
 <p><b> Getting Comfortable With Kali Linux</b><br></p>
 
 
