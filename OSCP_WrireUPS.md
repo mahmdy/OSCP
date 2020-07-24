@@ -1,31 +1,69 @@
-<p>
-  <div align="center">
+<div align="center">
 
   <b>OSCP 2020</b><br>
 
  <img src="oscp1.png">
 </div>
-</p>
+
 <p><b> Getting Comfortable With Kali Linux</b><br></p>
 
+## System structure:
 
+** /bin **
+ 
+this contains the basic programs
+
+** /sbin **
+
+this contains the system  executabols
+
+** /etc **
+
+this contains the configuration files
+
+** /tmp **
+
+this contains the temp files
+
+** /usr/bin **
+
+this contains the user  executabols
+
+** /usr/share **
+
+this contains the application support and data files
+
+## useful commands:
+
+#search the man pages
+
+```
+$ apropos [keyword]
+```
+```
+$  man -k [keyword]
+```
+
+used to search in man pages for command based on it's function 
+
+ 
 # Find File:
 
 **locate**
 ```
-updatedb
+$ updatedb
 ```
 to update the file index database
 
 ```
-locate [filename]
+$ locate [filename]
 ```
 **which**
 
 find the file which has current execution environment
 
 ```
-which [part of file name]
+$ which [part of file name]
 ```
 
 **find**
@@ -33,13 +71,19 @@ which [part of file name]
 powerfull search tool with many arguments
 
 ```
-find [search location]  -name [filename] -exec file "{}"\;
+$ find [search location]  -name [filename] -exec file "{}"\;
 ```
 
 # Service managent:
 
+to chick service status:
+
 ```
-service [service name] [option]
+# ss - antlp | grep [servicename]
+```
+where a= all, n= numirecal, t= TCP, l= listning, and p= process
+```
+# service [service name] [option]
 
 ```
 option could be : start, stop, or restart
@@ -47,8 +91,15 @@ option could be : start, stop, or restart
 alternatevly you can use:
 
 ```
-/etc/init.d/[service name] [option]
+# /etc/init.d/[service name] [option]
 ```
+
+or:
+
+```
+# systemctl [option] [service name]
+```
+option enable is used to set service to start on boot
 
 or:
 
