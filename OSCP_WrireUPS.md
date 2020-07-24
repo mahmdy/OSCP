@@ -1,7 +1,7 @@
 <p align="center">
-<font size="50">
-  <h2>OSCP</h2><br>
-</font>
+
+  <b><font size="50">OSCP</font></b><br>
+
  <img src="oscp1.png">
 </p>
 <font>
