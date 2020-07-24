@@ -5,6 +5,8 @@
  <img src="oscp1.png">
 </p>
 
+<p style="color:red"><b> Getting Comfortable With Kali Linux</b><br></p>
+</p>
 
 # Find File:
 
