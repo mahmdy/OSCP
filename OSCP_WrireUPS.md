@@ -1,12 +1,15 @@
 <p align="center">
-<font size="20">
+<font size="50">
   <b>OSCP</b><br>
 </font>
  <img src="oscp1.png">
 </p>
+<font>
+  size="40"
+  color="red"
+</font>
+<p><b> Getting Comfortable With Kali Linux</b><br></p>
 
-<p style="color:red"><b> Getting Comfortable With Kali Linux</b><br></p>
-</p>
 
 # Find File:
 
