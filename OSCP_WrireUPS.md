@@ -1,4 +1,4 @@
-<p align="center;style="font-size:50px;color:red">
+<p style="font-size:50px;color:red;align=center">
 
   SCP<br>
 
