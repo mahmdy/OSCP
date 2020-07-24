@@ -1,4 +1,4 @@
-<p style="font-size:50px;color:red">
+<p style="color:red">
 
   <b>OSCP 2020</b><br>
 </p>
