@@ -1,6 +1,6 @@
-<p align="center">
+<p align="center;style="font-size:50px;color:red">
 
-  <b><font size="50">OSCP</font></b><br>
+  SCP<br>
 
  <img src="oscp1.png">
 </p>
