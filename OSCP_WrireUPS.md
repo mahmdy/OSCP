@@ -136,6 +136,40 @@ Ctrl + r "reverce search"
 ctrl + d "close terminal"
 flag + d "show desktop"
 ``` 
+### Data Streames:
+
+STDIN 0, STDOUT 1, and STDERR 2
+
+to redirect STDOUT " the command result"
+
+```
+$ command 1> file 
+```
+
+to redirect STDERR " the command error MSG"
+
+```
+$ command 2> file 
+```
+
+the duble > ">>" in redirection means contanue on the file, while a single ">" means overright the file if it existing
+
+the "<" means read from file
+
+### Text Searching:
+
+```
+$ grep
+```
+
+```
+$ cut -f [number] -d [delimiter]
+```
+the number here refaers to the order of the cutted feald arround the delimiter, if it was 1 means the feild before the delumuter,2 means next to it 3 means the 2nd one aftre the 1st ocuerance of the delimiter, and so on 
+
+
+### Editing files:
+
 
 # Bash Shell
 
