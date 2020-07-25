@@ -5,17 +5,17 @@
  <img src="oscp1.png">
 </div>
 
-<p><b> Getting Comfortable With Kali Linux</b><br></p>
+# Getting Comfortable With Kali Linux
 
 ## System structure:
 
 ** /bin **
  
-this contains the basic programs
+this contains the basic programs (ls, cd, cat, etc.)
 
 ** /sbin **
 
-this contains the system  executabols
+this contains the system programs (fdisk, mkfs, sysctl, etc)
 
 ** /etc **
 
@@ -23,19 +23,19 @@ this contains the configuration files
 
 ** /tmp **
 
-this contains the temp files
+this contains the temp files (typically deleted on boot)
 
 ** /usr/bin **
 
-this contains the user  executabols
+this contains the user  applications (apt, ncat, nmap, etc.)
 
 ** /usr/share **
 
 this contains the application support and data files
 
-## useful commands:
+# useful commands:
 
-#search the man pages
+## search the man pages
 
 ```
 $ apropos [keyword]
@@ -123,6 +123,8 @@ sysv--rc-conf
 
 ![Alt text](sysv-rc-conf.png)
 
+
+## Command Line Fun
 
 # Bash Shell
 
