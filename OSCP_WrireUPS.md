@@ -126,6 +126,17 @@ sysv--rc-conf
 
 ## Command Line Fun
 
+### some keyboard shortcuts
+
+```
+Alt + Ctrl + c "copy"
+Alt + Ctrl + v "paste"
+Ctrl + l "clear"
+Ctrl + r "reverce search"
+ctrl + d "close terminal"
+flag + d "show desktop"
+``` 
+
 # Bash Shell
 
 to automate actions you need to write some shell scripts for example filtring domain names from a html page:
