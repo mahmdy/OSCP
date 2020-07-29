@@ -170,8 +170,111 @@ the number here refaers to the order of the cutted feald arround the delimiter, 
 
 ### Editing files:
 
+nano keyboard commands:
+
+Ctrl + O = write out to the file (save) 
+
+Ctrl + k = Cut text
+
+Ctrl + u = peast
+
+Ctrl + w = search
+
+Ctrl + x = exit 
+
+
+VI keyboard commands:
+
+i = enable inserting text
+
+(esc) = quit / desable the inserting mode
+
+dd = delete current line
+
+yy = copy the current line
+
+p = peast
+
+x = delete current charechtor
+
+:w = save
+
+:q = quit
+
+:q! = quit without saving
+
+:wq! = save and exit
+
+
+## Comparing Files: 
+
+```
+$ comm -n [file1] [file2]
+```
+output is 3 columns 1st the unique lines in [file1], the 2nd the unique lines in [file2], and the 3rd is the commane lines in both files
+
+where n changes from 1 ( showes only unique lines in file1), 2 (showes only unique lines in file2), or 12 ( showes command lines between the 2 files)
+
+```
+$ diff [option] [file1] [file2]
+```
+
+[option] is: -c context format, lists the two files and use "-" for the unique lines in [file1], and "+" for the unique lines in [file2]
+              -u showes the two files containtes with "-/+" marks tags the unique lines in both files 
+```
+vimdiff [file1][file2]
+```
+shows the two files in alligned windows and marks the differenc
+
+shortcut keys:
+
+Ctrl+w (righ arrow): switch tetween the two windows
+
+] +c : jump to the next changed line
+
+[ +c : jump to the previuce changed line
+
+d + o : copy changes from the other windows to the current one
+
+d + p : copy changes from current windows to the other one
+
+:q!  : to quit
+
+
+## managing jobs and process:
+
+to send a command execution to the background add "&" at the end of the command
+
+Ctrl +z suspends a command executed in the forground then type "bg" this will resume the command execution in the background
+
+jobs and fg commands
+
+jobs used to list background command
+
+fg used to bring background command to forground
+
+fg %[job number] returnes this job to forground
+
+ps command: Process Status
+
+```
+ps -ef
+```
+## download files
+
+```
+$ wget -O [save file under name] [url]
+
+$ curl -o [save file under name] [url]
+
+$ axel -a -n [unmber of sessions] -o [save file under name] [url]
+```
+axel is download accelarator
+
+-a show progress indecator
 
 # Bash Shell
+
 
 to automate actions you need to write some shell scripts for example filtring domain names from a html page:
 
