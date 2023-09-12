@@ -347,13 +347,13 @@ the port is the server spacified port number
 
 NetCat file transfare:
 
-server side (sender):
+server side (reciver):
 
 ```
 $nc -npl [port] > [name for the recived file]
 ```
 
-client side:
+client side (sender):
 
 ```
 $nc -n [serverIP] [server port] < [path of the file to be send]
