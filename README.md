@@ -319,10 +319,10 @@ the & is to send each command to background and run the next on in the loop
 
 # Remote Login:
 
-## Rdisktop
+## Rdesktop
 
 ```
-$rdisktop -u *username* -p *password* *hostname/ip*
+$rdesktop -u *username* -p *password* *hostname/ip*
 ```
 
 ## NetCat
