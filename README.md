@@ -77,7 +77,7 @@ $ find [search location]  -name [filename] -exec file "{}"\;
 to chick service status:
 
 ```
-# ss - antlp | grep [servicename]
+# ss -antlp | grep [servicename]
 ```
 where a= all, n= numirecal, t= TCP, l= listning, and p= process
 ```
