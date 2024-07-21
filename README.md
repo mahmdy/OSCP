@@ -127,8 +127,8 @@ sysv--rc-conf
 ### some keyboard shortcuts
 
 ```
-Alt + Ctrl + c "copy"
-Alt + Ctrl + v "paste"
+Shift + Ctrl + c "copy"
+Shift + Ctrl + v "paste"
 Ctrl + l "clear"
 Ctrl + r "reverce search"
 ctrl + d "close terminal"
@@ -170,12 +170,19 @@ $ grep
 ```
 $ cut -f [number] -d [delimiter]
 ```
+
 the number here refaers to the order of the cutted feald arround the delimiter, if it was 1 means the feild before the delumuter,2 means next to it 3 means the 2nd one aftre the 1st ocuerance of the delimiter, and so on 
+
+```
+$ awk -F [delimiter] '{print $[fild number],$[fild number],....}'
+```
+
+awk accepts multi charachter delimiter, and can print selected filds of the input text
 
 
 ### Editing files:
 
-nano keyboard commands:
+#### <i>nano keyboard commands:</i>
 
 Ctrl + O = write out to the file (save) 
 
@@ -188,11 +195,12 @@ Ctrl + w = search
 Ctrl + x = exit 
 
 
-VI keyboard commands:
+#### <i>VI keyboard commands:</i>
+in <b>vi</b> you have two diffrent moods (<i><b>text insert mood</b></i>, and <i><b>command mood</b></i>)
 
 i = enable inserting text
 
-(esc) = quit / desable the inserting mode
+(esc) = quit / <u>desable the inserting mode</u>
 
 dd = delete current line
 
@@ -227,7 +235,7 @@ $ diff [option] [file1] [file2]
 [option] is: -c context format, lists the two files and use "-" for the unique lines in [file1], and "+" for the unique lines in [file2]
               -u showes the two files containtes with "-/+" marks tags the unique lines in both files 
 ```
-vimdiff [file1][file2]
+$ vimdiff [file1][file2]
 ```
 shows the two files in alligned windows and marks the differenc
 
@@ -263,17 +271,53 @@ fg %[job number] returnes this job to forground
 ps command: Process Status
 
 ```
-ps -ef
+$ ps -ef
 ```
+## Monitoring files
+```
+$ tail -f [file name]
+```
+
+the -f allow tail to keep live monitoring on the file update
+
+```
+$ tail -f /etc/passwd
+```
+here we can monitor every user being added to the system
+
+## Monitoring commands
+
+```
+$ watch -n [time in seconds] [command]
+```
+execute command repetitively in specified time interval
+
 ## download files
 
 ```
 $ wget -O [save file under name] [url]
-
+```
+```
 $ curl -o [save file under name] [url]
+```
+with curl you can use diffrent options such as:
+-d for adding data as prameters
+-X for spacify the http method you use
+-F for file upload
+-T for file upload also
+```
+$ curl -F 'file=@[file name]' [url]
+```
+this is a http POST method
+```
+$ curl -T 'file name] [url]
+```
+but this is a http PUT method
 
+```
 $ axel -a -n [unmber of sessions] -o [save file under name] [url]
 ```
+
 axel is download accelarator
 
 -a show progress indecator
@@ -295,8 +339,18 @@ other method:
 ```
 cat index.html |grep 'http://[^"]*' | cut -d "/" -f 3 |sort -u
 ```
+#### command aliases:
+aliase a command for fast operation. for example the command find:
 
+```
+$ find / -perm -4000 2>/dev/null
+```
+this command is used to find files with <i><b>s</b></i> permission, which could be elised this way for easear recalling it
 
+```
+$ alias [alias name]='find / -perm -4000 2>/dev/null'
+```
+next time to call the search for the <i><b>s</b></i> permission, you can only call the alias.
 
 
 ## login with ssh-private key
