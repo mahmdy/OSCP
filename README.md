@@ -281,7 +281,7 @@ $ tail -f [file name]
 the -f allow tail to keep live monitoring on the file update
 
 ```
-$ tail -f /etc/passwd
+$ sudo tail -f /var/log/apache2/access.log
 ```
 here we can monitor every user being added to the system
 
