@@ -376,8 +376,13 @@ the & is to send each command to background and run the next on in the loop
 ## Rdesktop
 
 ```
-$rdesktop -u *username* -p *password* *hostname/ip*
+$ rdesktop -u *username* -p *password* *hostname/ip*
 ```
+
+```
+$ remmina
+```
+here you will provide the remote server IP address, username, and password in the GUI
 
 ## NetCat
 
